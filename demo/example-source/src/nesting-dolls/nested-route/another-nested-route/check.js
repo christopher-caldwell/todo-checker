@@ -3,4 +3,4 @@
  * @ticket https://yeah-right.nope/it-will-not-get-fixed
  */
 // eslint-disable-next-line
-const defaultDate = new Date();
+const defaultDate = new Date()
