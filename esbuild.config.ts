@@ -1,6 +1,6 @@
-import esbuild from 'esbuild'
+import * as esbuild from 'esbuild'
 
-const build = async () => {
+const main = async () => {
   try {
     await esbuild.build({
       entryPoints: ['src/index.ts', 'src/cli.ts'],
@@ -17,4 +17,4 @@ const build = async () => {
   }
 }
 
-build()
+main()

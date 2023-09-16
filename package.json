@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "lint": "eslint ./ --ext .ts",
     "type-check": "tsc --noEmit",
-    "just:build": "ts-node esbuild.config.ts",
+    "build": "ts-node esbuild.config.ts",
     "publish:version": "sh scripts/publish.sh"
   },
   "repository": {

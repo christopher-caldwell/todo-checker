@@ -2,9 +2,9 @@ import { resolve } from 'path'
 import { readFileSync, statSync } from 'fs-extra'
 import dayJs from 'dayjs'
 import { parse, Block } from 'comment-parser'
+import assert from 'assert'
 
 import type { CheckArgs, CheckIssue } from './'
-import assert from 'assert'
 // import type { CheckArgs } from './'
 
 export const parseFile = async (filePath: string, todoValidator: CheckArgs['todoValidator']) => {
