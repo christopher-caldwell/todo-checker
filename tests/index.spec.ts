@@ -1,4 +1,4 @@
-import { check } from 'src/index'
+// import { check } from 'src/index'
 
 describe('Check', () => {
   test('Can run', () => {
