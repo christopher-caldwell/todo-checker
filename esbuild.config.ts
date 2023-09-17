@@ -5,7 +5,7 @@ const main = async () => {
     await esbuild.build({
       entryPoints: ['src/index.ts', 'src/cli.ts', 'src/action.ts'],
       outdir: 'dist',
-      bundle: false,
+      bundle: true,
       minify: true,
       platform: 'node',
       target: 'node16',
