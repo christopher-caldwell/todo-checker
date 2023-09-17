@@ -16,7 +16,7 @@ class CheckerCommand extends Command {
   pathToSource = Option.String('-ps,--pathToSource', pathToSourceDefault, {
     arity: 1,
     tolerateBoolean: false,
-    description: 'Relative path to the directory to check',
+    description: 'Relative path to directory to check',
   })
   fileGlob = Option.String('-g,--glob', fileGlobDefault, {
     description: 'Glob Expression to check if a file should be checked',
@@ -24,16 +24,16 @@ class CheckerCommand extends Command {
     arity: 1,
   })
   ignorePatterns = Option.Array('-ign,--ignorePatterns', ignorePatternsDefault, {
-    description: 'The file patterns the checker will ignore',
+    description: 'File patterns checker will ignore',
     validator: t.isArray(t.isString()),
   })
   cutoffDate = Option.String('-cod,--cutoffDate', cutoffDateDefault, {
-    description: 'The cutoff date for a todo passing. Defaults to todays date',
+    description: 'Cutoff date for a todo passing. Defaults to todays date',
     validator: t.isDate(),
     arity: 1,
   })
   logLevel = Option.String(`-ll,--logLevel`, logLevelDefault, {
-    description: 'The log level of the conversion',
+    description: 'Log level of conversion',
     arity: 1,
   })
   maxNumberOfOverdue = Option.String(`-mo,--maxOverdue`, maxNumberOfOverdueDefault, {

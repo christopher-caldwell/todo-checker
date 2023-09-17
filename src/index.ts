@@ -1,6 +1,5 @@
 import { globSync } from 'glob'
 import type { Block } from 'comment-parser'
-import cliProgress from 'cli-progress'
 
 import {
   pathToSourceDefault,
@@ -13,8 +12,6 @@ import {
 } from './defaults'
 import { parseFile, checkIfPathIsDir } from './parseFile'
 
-const ConversionProgress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
-
 export const check = async (argumentos: CheckArgs) => {
   const {
     pathToSource = pathToSourceDefault,
@@ -24,7 +21,6 @@ export const check = async (argumentos: CheckArgs) => {
   } = argumentos
   // Consider doing a stream again if this is too memory intensive
   const filePaths = globSync(fileGlob, { ignore: ignorePatterns, root: pathToSource })
-  ConversionProgress.start(filePaths.length, 0)
 
   let numberOfFilesChecked = 0
   let totalNumberOfFailing = 0
@@ -33,7 +29,6 @@ export const check = async (argumentos: CheckArgs) => {
 
   for (const relativeFilePath of filePaths) {
     numberOfFilesChecked++
-    ConversionProgress.increment()
     if (checkIfPathIsDir(relativeFilePath)) continue
     const { numberOfFailing, numberOfPassing, issues } = await parseFile(relativeFilePath, todoValidator)
     totalNumberOfFailing += numberOfFailing

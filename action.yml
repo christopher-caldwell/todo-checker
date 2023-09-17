@@ -1,0 +1,27 @@
+name: 'TODO Checker'
+description: 'CLI for tacking the status of your outstanding TODO comments.'
+inputs:
+  path-to-source:
+    description: 'Relative path to the directory to check'
+  file-glob:
+    description: 'Glob Expression to check if a file should be checked'
+  ignore-patterns:
+    description: 'File patterns the checker will ignore. GH Actions does not allow arrays, so this will be JSON parsed. Provide "["PATTERN", "NEXT_PATTERN"]" for array like usage.'
+  cutoff-date:
+    description: 'Cutoff date for a todo passing. Defaults to todays date'
+  log-level:
+    description: 'Log level for the checker'
+  max-overdue:
+    description: 'Maximum number of overdue todos you consider successful'
+  allow-malformed:
+    description: 'Allow a non-standard todo to be present and still pass'
+outputs:
+  num-passed:
+    description: 'Number of files with TODOs that passed'
+  num-failed:
+    description: 'Number of files with TODOs that failed'
+  num-files-checked:
+    description: 'Number of files in total checked'
+runs:
+  using: 'node18'
+  main: 'dist/action.js'
