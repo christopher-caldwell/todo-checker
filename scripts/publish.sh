@@ -37,13 +37,6 @@ if [ $? != 0 ]; then
   exit 1
 fi
 
-cp dist/cli.js dist/
-
-if [ $? != 0 ]; then
-  printf "\n\n$Red$(echo Build failed.)$Color_Off"
-  exit 1
-fi
-
 printf "\n\n$BICyan$(echo Bumping the version number..)$Color_Off"
 
 standard-version
