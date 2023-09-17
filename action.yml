@@ -23,5 +23,5 @@ outputs:
   num-files-checked:
     description: 'Number of files in total checked'
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'dist/action.js'
