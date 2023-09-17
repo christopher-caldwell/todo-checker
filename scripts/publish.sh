@@ -39,10 +39,15 @@ fi
 
 printf "\n\n$BICyan$(echo Bumping the version number..)$Color_Off"
 
-standard-version
+npx standard-version
+
+if [ $? != 0 ]; then
+  printf "\n\n$Red$(echo Build failed.)$Color_Off"
+  exit 1
+fi
 
 printf "\n\n$BICyan$(echo Publishing new version..)$Color_Off"
 
-git push --follow-tags origin master
+# git push --follow-tags origin master
 
-yarn publish --access=public
+# yarn publish --access=public
