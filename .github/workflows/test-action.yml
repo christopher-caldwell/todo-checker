@@ -14,6 +14,5 @@ jobs:
       - name: Test Local Action
         id: test-action
         uses: ./
-      - name: Test Local Action
-        id: test-action
+      - name: Log output
         run: echo {{ steps.test-action.outputs.num-passed }}
