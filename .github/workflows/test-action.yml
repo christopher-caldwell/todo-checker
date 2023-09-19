@@ -15,4 +15,4 @@ jobs:
         id: test-action
         uses: ./
       - name: Log output
-        run: echo {{ steps.test-action.outputs.num-passed }}
+        run: echo ${{ steps.test-action.outputs.num-passed }}
